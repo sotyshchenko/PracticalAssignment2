@@ -30,6 +30,7 @@ where oo.order_date > '2024-06-01'
 and oo.order_id like '_____'
 and (op.product_category in ('Category1', 'Category3', 'Category5'))
 and op.product_price > 100
+and oc.status = 'active'
 order by op.product_price desc;   
 
 
@@ -74,6 +75,7 @@ with cte as (
     and oo.order_id like '_____'
     and op.product_category in ('Category1', 'Category3', 'Category5')
     and op.product_price > 100
+    and oc.status = 'active'
     )
 
 select * from cte order by op.product_price desc;   
